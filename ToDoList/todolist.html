@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>to do list app</title>
+
+        <link rel="stylesheet" href="todolist.css" />
+    </head>
+    <body>
+        <section class="content">
+            <div class="container">
+                <h4 class="version">#v2.0</h4>
+                <h1>TO DO LIST <span class="web">APP</span></h1>
+                <p class="name">by <span class="myName">A. S Syafik Nurahman</span></p>
+                <p>This website is my small project for make notes, I hope you enjoy it.</p>
+                <select name="mode" id="mode">
+                    <option value="todolist">to do list</option>
+                    <option value="counter">counter</option>
+                </select>
+                <div class="container-input">
+                    <input class="data" type="text" />
+                    <button class="btn" onclick="Addlist()">Submit</button>
+                </div>
+                <ul class="content-data"></ul>
+            </div>
+        </section>
+        <script src="todolist.js"></script>
+    </body>
+</html>

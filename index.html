@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- // font roboto -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+        <!-- font poppins -->
+         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- //cdn tailwindcss -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <!-- css -->
+         <link rel="stylesheet" href="index.css">
+        <!-- 3️⃣ KONFIGURASI FONT Wajib di sini! -->
+         <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            poppins: ["Poppins", "sans-serif"],
+                            body: ["Poppins", "sans-serif"],
+                        },
+                    },
+                },
+            };
+        </script>
+
+        <title>Syafik Dev</title>
+    </head>
+     </head>
+    <body class="bg-gray-800 pt-20">
+        <!-- Tambah padding-top untuk navbar fixed -->
+
+        <!-- Navbar -->
+        <nav class="bg-gray-900 w-full fixed top-0 left-0 z-50 py-4 shadow-lg">
+            <div
+                class="container mx-auto flex items-center justify-between px-6 text-neutral-50"
+            >
+        
+                <div>
+                    <h2 class="text-3xl font-bold text-teal-400">SYAFIK</h2>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#about" class="hover:text-teal-400 transition"
+                        >About</a
+                    >
+                    <a href="#project" class="hover:text-teal-400 transition"
+                        >Project</a
+                    >
+                    <a href="#contact" class="hover:text-teal-400 transition"
+                        >Contact</a
+                    >
+                </div>
+            </div>
+        </nav>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center">
+            <div
+                class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-neutral-50 px-6"
+            >
+                <div class="flex flex-col justify-center">
+                    <h1
+                        class="text-3xl md:text-4xl font-mono text-teal-500 font-bold"
+                    >
+                        WEB DEVELOPER
+                    </h1>
+                    <h3 class="text-teal-400 font-mono text-xl">
+                        I AM A STUDENT
+                    </h3>
+                </div>
+                <div class="text-center">
+                    <img
+                        src="img/person.jpg"
+                        class="rounded-full w-64 h-64 mx-auto object-cover border-4 border-teal-500"
+                        alt="Profile"
+                    />
+                    <h1 class="mt-4 text-xl text-teal-500 font-mono">
+                        A.S SYAFIK NURAHMAN
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2
+                    class="text-teal-400 font-mono text-3xl text-center font-semibold mb-10"
+                >
+                    ABOUT
+                </h2>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 text-white text-justify gap-8 max-w-5xl mx-auto"
+                >
+                    <div class="bg-gray-900/50 p-6 rounded-xl">
+                        <p class=" leading-relaxed indent-4">
+                            Hello, my name is A.S SYAFIK NURAHMAN. I am a
+                            student at SMAN 2 BANGKALAN, 16 years old, born in
+                            Bangkalan on 18th February 2009. I am the last child
+                            of 4 siblings. I always try new skills in my free
+                            time like coding and editing video. I watch One
+                            Piece on Bstation app every week. I have a dream to
+                            become a successful person and make my parents
+                            proud.
+                        </p>
+                    </div>
+                    <div class="bg-gray-900/50 p-6 rounded-xl">
+                        <p class="font-roboto leading-relaxed indent-4">
+                            I am very interested in the tech world. I learn new
+                            tech to upgrade my skills and hope to create this
+                            website with pure knowledge. I struggle to build
+                            this responsive website and I'm confused about
+                            writing in English while my English is not so good.
+                            So I hope you give criticism and suggestions to make
+                            this website better.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Section (diperbaiki) -->
+        <section id="project" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2
+                    class="text-teal-400 font-mono text-3xl text-center font-semibold mb-10"
+                >
+                    PROJECT
+                </h2>
+
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-gray-200 mb-4">
+                        1. TO DO LIST
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <img
+                                src="img/Screenshot (13).png"
+                                class="w-full rounded-lg shadow-lg hover:opacity-80 transition"
+                                alt="To Do List"
+                            />
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-gray-200">Status:</span>
+                                <span class="text-green-500 font-semibold"
+                                    >Done</span
+                                >
+                                <div
+                                    class="h-3 w-3 bg-green-500 rounded-full"
+                                ></div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-teal-400 font-semibold">
+                                    DESCRIPTION:
+                                </h4>
+                                <p class="text-gray-300">
+                                    A simple To Do List application to manage
+                                    daily tasks with add, delete, and mark as
+                                    complete features.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-teal-400 font-semibold">
+                                    TECH:
+                                </h4>
+                                <div class="flex gap-3 mt-2">
+                                    <img
+                                        src="img/html-5.png"
+                                        class="w-8 h-8"
+                                        alt="HTML"
+                                    />
+                                    <img
+                                        src="img/css-3.png"
+                                        class="w-8 h-8"
+                                        alt="CSS"
+                                    />
+                                    <img
+                                        src="img/js.png"
+                                        class="w-8 h-8"
+                                        alt="JavaScript"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="flex gap-6 pt-4">
+                                <a
+                                    href="https://github.com/theLarvathon/to-do-list"
+                                    target="_blank"
+                                    class="text-blue-400 hover:text-blue-300 underline"
+                                >
+                                    GitHub
+                                </a>
+                                <a
+                                    href="./ToDoList/todolist.html"
+                                    class="text-green-400 hover:text-green-300 underline"
+                                >
+                                    Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h2
+                    class="text-teal-400 font-mono text-3xl text-center font-semibold mb-10"
+                >
+                    CONTACT
+                </h2>
+                <div class="max-w-md mx-auto bg-gray-900/50 p-8 rounded-xl">
+                    <p class="text-gray-300 mb-6">Don't hestitate to contact me!</p>
+                    <div class="space-y-4">
+                        <p class="text-gray-300">
+                            <span class="font-semibold text-teal-400"
+                                >Email:</span
+                            >
+                            syafikasif@gmail.com
+                        </p>
+                        <p class="text-gray-300">
+                            <a href="https://www.instagram.com/xlarvaton" class="font-semibold text-teal-400"
+                                >Instagram:</
+                            >
+                            @xlarvaton
+                        </p>
+                        <p class="text-gray-300">
+                            <span class="font-semibold text-teal-400"
+                                >GitHub:</span
+                            >
+                            thelarvathon
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 py-6 mt-10">
+            <div class="container mx-auto px-6 text-center text-gray-400">
+                <p>&copy; 2024 Syafik Dev. All rights reserved.</p>
+                <p class="text-sm mt-2">Built with Tailwind CSS</p>
+            </div>
+        </footer>
+    </body>
+</html>
