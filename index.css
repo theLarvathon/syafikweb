@@ -1,1 +1,17 @@
 
+
+
+  body.light-mode {
+    background-color: hsl(0, 0%, 90%);
+    color: black;  /* text-gray-900 */
+  
+  }
+  .bg.light-mode{
+    background: #ebebeb;
+  }
+  .Text.light-mode {
+    color: black;
+  }
+  .navbg.light-mode{
+    background-color: #f8f8f8;
+  }
