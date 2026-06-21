@@ -2,16 +2,49 @@
 
 
   body.light-mode {
-    background-color: hsl(0, 0%, 90%);
+    background-color: hsl(0, 0%, 100%);
     color: black;  /* text-gray-900 */
   
   }
   .bg.light-mode{
-    background: #ebebeb96;
+    background: #EFF6FF;
   }
-  .Text.light-mode {
+  .bg-button.light-mode{
+    background-color: #FBBF24;
+  }
+  .Text-nav.light-mode, .Text.light-mode {
     color: black;
   }
   .navbg.light-mode{
-    background-color: #f8f8f8;
+    background-color: hsl(241, 100%, 63%);
   }
+  .bg-button.light-mode:hover, .Text-nav.light-mode:hover{
+    color: #ffffff;
+  }
+  .svg.light-mode path{
+      fill: #EFF6FF ;
+  }
+  .svg.dark-mode path{
+      fill: #111827 ;
+  }
+  .namedSpan.light-mode, .named.dark-mode{
+    color: #ffffff;
+  }
+  .namedSpan.dark-mode, .named.light-mode{
+    color: #FBBF24;
+  }
+
+    
+  
+  
+
+#carouselTrack {
+  display: flex;        
+  flex-wrap: nowrap;
+  gap: 3rem;
+  width: max-content;  
+}
+
+.carousel-item {
+  flex: 0 0 auto;      
+}
