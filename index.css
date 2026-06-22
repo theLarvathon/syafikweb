@@ -1,6 +1,19 @@
 
-
-
+.font-primary {
+      font-family: "Black Ops One" !important;
+  }
+.font-quicksand {
+   font-family: "quicksand";
+}
+.font-six{
+  font-family: 'Sixtyfour';
+}
+.font-jac{
+  font-family: 'Jacquard' ;
+}
+.font-smok{
+  font-family: 'Smokum' ;
+}
   body.light-mode {
     background-color: hsl(0, 0%, 100%);
     color: black;  /* text-gray-900 */
@@ -13,7 +26,7 @@
     background-color: #FBBF24;
   }
   .Text-nav.light-mode, .Text.light-mode {
-    color: black;
+    color: rgb(0, 0, 0);
   }
   .navbg.light-mode{
     background-color: hsl(241, 100%, 63%);
@@ -25,7 +38,7 @@
       fill: #EFF6FF ;
   }
   .svg.dark-mode path{
-      fill: #111827 ;
+      fill: #000000 ;
   }
   .namedSpan.light-mode, .named.dark-mode{
     color: #ffffff;
@@ -45,6 +58,25 @@
   width: max-content;  
 }
 
+.carousel-container {
+    overflow: hidden;  /* ← INI yang paling penting */
+    width: 100%;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+
 .carousel-item {
-  flex: 0 0 auto;      
+    flex-shrink: 0;
+    padding: 0 1rem;
+}
+
+.carousel-item img {
+    height: 24;
+    width: auto;
+    object-fit: contain;
 }

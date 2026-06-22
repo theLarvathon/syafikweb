@@ -57,7 +57,8 @@ toggleBtn.addEventListener("click", function () {
   }
 });
 });
-
+svg.setAttribute('data-aos','fade-up');
+svg.setAttribute('data-aos-duration','2000');
 // ============= HUMBERGER MENU ============== //
 
 const humbergerMenu = document.getElementById("humberger-menu");
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
         track.innerHTML = '';
         
         // Buat 3 set untuk memastikan tidak ada kekosongan
-        for (let set = 0; set < 3; set++) {
+        for (let set = 0; set < 2; set++) {
             logos.forEach((logoUrl) => {
                 const item = document.createElement('div');
                 item.className = 'carousel-item';
@@ -136,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
     buildCarousel();
     
     // Hitung total lebar
-    const totalWidth = track.scrollWidth / 3; // Lebar 1 set
+    const totalWidth = track.scrollWidth / 2  ; // Lebar 1 set
     
     // Animasi infinite dengan GSAP
     function animateCarousel() {
@@ -184,6 +185,8 @@ dividers.forEach(divider =>{
   for (let i = 0; i < blockCount; i++) {
     const block = document.createElement("div");
     const isEven = i % 2 === 0;
+    block.setAttribute('data-aos','fade-up');
+    block.setAttribute('data-aos-duration','2000');
     block.className = `flex-1 border-t-2 border-r-2 border-r-blue-700 border-blue-300 ${
       isEven ? "bg-blue-500" : "bg-blue-600"
     }`;
