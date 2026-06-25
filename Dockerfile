@@ -5,30 +5,8 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 RUN apk add --no-cache nginx
 
 COPY . /var/www/html/
-
-COPY <<EOF /etc/nginx/http.d/default.conf
-server {
-    listen 80;
-    root /var/www/html;
-    index index.php index.html;
-
-    location / {
-        try_files \$uri \$uri/ /index.php?\$query_string;
-    }
-
-    location ~ \.php$ {
-        fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
-        include fastcgi_params;
-    }
-}
-EOF
-
-COPY <<EOF /start.sh
-#!/bin/sh
-php-fpm -D
-nginx -g "daemon off;"
-EOF
+COPY nginx.conf /etc/nginx/http.d/default.conf
+COPY start.sh /start.sh
 
 RUN chmod +x /start.sh
 
