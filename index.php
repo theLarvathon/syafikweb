@@ -1,3 +1,3 @@
 <?php
 // index.php
-include 'index.html';
+readfile('home.html');
