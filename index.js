@@ -22,43 +22,43 @@ window.onload = function () {
   namedSpan.classList.add("dark-mode");
 };
 toggleBtns.forEach((toggleBtn) => {
-toggleBtn.addEventListener("click", function () {
-  // Cek mode saat ini
-  if (body.classList.contains("light-mode")) {
-    body.classList.remove("light-mode");
-    text.forEach((text) => text.classList.remove("light-mode"));
-    bg.forEach((r) => r.classList.remove("light-mode"));
-    nav.forEach((r) => r.classList.remove("light-mode"));
-    named.classList.remove("light-mode");
-    namedSpan.classList.remove("light-mode");
-    named.classList.add("dark-mode");
-    namedSpan.classList.add("dark-mode");
-    textnav.forEach((r) => r.classList.remove("light-mode"));
-    bgBtn.forEach((r) => r.classList.remove("light-mode"));
-    svg.classList.remove("light-mode");
-    svg.classList.add("dark-mode");
-    // Update teks tombol
-    toggleBtn.textContent = "light-mode";
-  } else {
-    body.classList.add("light-mode");
-    text.forEach((r) => r.classList.add("light-mode"));
-    named.classList.add("light-mode");
-    namedSpan.classList.add("light-mode");
-    named.classList.remove("dark-mode");
-    namedSpan.classList.remove("dark-mode");
-    bg.forEach((r) => r.classList.add("light-mode"));
-    nav.forEach((r) => r.classList.add("light-mode"));
-    textnav.forEach((r) => r.classList.add("light-mode"));
-    bgBtn.forEach((r) => r.classList.add("light-mode"));
-    svg.classList.add("light-mode");
-    svg.classList.remove("dark-mode");
+  toggleBtn.addEventListener("click", function () {
+    // Cek mode saat ini
+    if (body.classList.contains("light-mode")) {
+      body.classList.remove("light-mode");
+      text.forEach((text) => text.classList.remove("light-mode"));
+      bg.forEach((r) => r.classList.remove("light-mode"));
+      nav.forEach((r) => r.classList.remove("light-mode"));
+      named.classList.remove("light-mode");
+      namedSpan.classList.remove("light-mode");
+      named.classList.add("dark-mode");
+      namedSpan.classList.add("dark-mode");
+      textnav.forEach((r) => r.classList.remove("light-mode"));
+      bgBtn.forEach((r) => r.classList.remove("light-mode"));
+      svg.classList.remove("light-mode");
+      svg.classList.add("dark-mode");
+      // Update teks tombol
+      toggleBtn.textContent = "light-mode";
+    } else {
+      body.classList.add("light-mode");
+      text.forEach((r) => r.classList.add("light-mode"));
+      named.classList.add("light-mode");
+      namedSpan.classList.add("light-mode");
+      named.classList.remove("dark-mode");
+      namedSpan.classList.remove("dark-mode");
+      bg.forEach((r) => r.classList.add("light-mode"));
+      nav.forEach((r) => r.classList.add("light-mode"));
+      textnav.forEach((r) => r.classList.add("light-mode"));
+      bgBtn.forEach((r) => r.classList.add("light-mode"));
+      svg.classList.add("light-mode");
+      svg.classList.remove("dark-mode");
 
-    toggleBtns.textContent = "Dark-mode";
-  }
+      toggleBtns.textContent = "Dark-mode";
+    }
+  });
 });
-});
-svg.setAttribute('data-aos','fade-up');
-svg.setAttribute('data-aos-duration','2000');
+svg.setAttribute('data-aos', 'fade-up');
+svg.setAttribute('data-aos-duration', '2000');
 // ============= HUMBERGER MENU ============== //
 
 const humbergerMenu = document.getElementById("humberger-menu");
@@ -72,125 +72,124 @@ const iconClose = `<svg class="size-8 fill-gray-100" xmlns="http://www.w3.org/20
 </svg>`;
 let isMenuOpen = false; // Variabel untuk melacak status menu
 humbergerMenu.addEventListener("click", function () {
-    isMenuOpen = !isMenuOpen; // Toggle status menu
-    if (isMenuOpen) {
-        mobilemenu.classList.remove("hidden");
-        mobilemenu.classList.add("flex");
-        hamburgerMenu.innerHTML = iconClose;
-    } else {
-        mobilemenu.classList.add("hidden");
-        mobilemenu.classList.remove("flex");
-        hamburgerMenu.innerHTML = iconOpen;
-    }
+  isMenuOpen = !isMenuOpen; // Toggle status menu
+  if (isMenuOpen) {
+    mobilemenu.classList.remove("hidden");
+    mobilemenu.classList.add("flex");
+    hamburgerMenu.innerHTML = iconClose;
+  } else {
+    mobilemenu.classList.add("hidden");
+    mobilemenu.classList.remove("flex");
+    hamburgerMenu.innerHTML = iconOpen;
+  }
 });
 
 
 // ============== CAROUSEL DENGAN GSAP ==============
-document.addEventListener('DOMContentLoaded', function() {
-    if (typeof gsap === 'undefined') {
-        console.error('GSAP tidak ditemukan!');
-        return;
-    }
-
-    const logos = [
-          "https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white",
-          "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white",
-          "https://img.shields.io/badge/Microsoft_Word-2B579A?style=for-the-badge&logo=microsoft-word&logoColor=white",
-          "https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue",
-          "https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white",
-          "https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E",
-          "https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white",
-          "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
-          "https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white",
-          "https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white",
-          "https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white",
-          "https://img.shields.io/badge/Codewars-B1361E?style=for-the-badge&logo=Codewars&logoColor=white",
-          "https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white",
-          "https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black",
-          "https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white",
-          "https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white",
-          "https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=claude&logoColor=white"
-];
-
-    const container = document.querySelector('.carousel-container');
-    const track = document.getElementById('carouselTrack');
-    
-    // Buat carousel items
-    function buildCarousel() {
-        track.innerHTML = '';
-        
-        // Buat 3 set untuk memastikan tidak ada kekosongan
-        for (let set = 0; set < 2; set++) {
-            logos.forEach((logoUrl) => {
-                const item = document.createElement('div');
-                item.className = 'carousel-item';
-                
-                const img = document.createElement('img');
-                img.src = logoUrl;
-                img.alt = 'Tech logo';
-                item.appendChild(img);
-                track.appendChild(item);
-            });
-        }
-    }
-    
-    buildCarousel();
-    
-    // Hitung total lebar
-    const totalWidth = track.scrollWidth / 2  ; // Lebar 1 set
-    
-    // Animasi infinite dengan GSAP
-    function animateCarousel() {
-        // Set posisi awal
-        gsap.set(track, { x: 0 });
-        
-        // Buat timeline
-        const tl = gsap.timeline({
-            repeat: -1,
-            ease: "none",
-            onRepeat: function() {
-                // Reset posisi tanpa jeda
-                gsap.set(track, { x: 0 });
-            }
-        });
-        
-        // Animasi geser
-        tl.to(track, {
-            x: -totalWidth,
-            duration: 20,
-            ease: "none"
-        });
-        
-        return tl;
-    }
-    
-    const carouselAnim = animateCarousel();
-    
-    // Pause on hover
-    container.addEventListener('mouseenter', () => {
-        carouselAnim.pause();
-    });
-    
-    container.addEventListener('mouseleave', () => {
-        carouselAnim.resume();
-    });
-    
-    console.log('🚀 GSAP Carousel berjalan!');
-});
-
-document.addEventListener("DOMContentLoaded",function(){
-const dividers = document.querySelectorAll(".pixel-divider");
-  const blockCount = 12;
-dividers.forEach(divider =>{
-  for (let i = 0; i < blockCount; i++) {
-    const block = document.createElement("div");
-    const isEven = i % 2 === 0;
-    block.setAttribute('data-aos','fade-up');
-    block.setAttribute('data-aos-duration','2000');
-    block.className = `flex-1 border-t-2 border-r-2 border-r-blue-700 border-blue-300 ${
-      isEven ? "bg-blue-500" : "bg-blue-600"
-    }`;
-    divider.appendChild(block);
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof gsap === 'undefined') {
+    console.error('GSAP tidak ditemukan!');
+    return;
   }
+
+  const logos = [
+    "https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white",
+    "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white",
+    "https://img.shields.io/badge/Microsoft_Word-2B579A?style=for-the-badge&logo=microsoft-word&logoColor=white",
+    "https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue",
+    "https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white",
+    "https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E",
+    "https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white",
+    "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
+    "https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white",
+    "https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white",
+    "https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white",
+    "https://img.shields.io/badge/Codewars-B1361E?style=for-the-badge&logo=Codewars&logoColor=white",
+    "https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white",
+    "https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black",
+    "https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white",
+    "https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white",
+    "https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=claude&logoColor=white"
+  ];
+
+  const container = document.querySelector('.carousel-container');
+  const track = document.getElementById('carouselTrack');
+
+  // Buat carousel items
+  function buildCarousel() {
+    track.innerHTML = '';
+
+    // Buat 3 set untuk memastikan tidak ada kekosongan
+    for (let set = 0; set < 2; set++) {
+      logos.forEach((logoUrl) => {
+        const item = document.createElement('div');
+        item.className = 'carousel-item';
+
+        const img = document.createElement('img');
+        img.src = logoUrl;
+        img.alt = 'Tech logo';
+        item.appendChild(img);
+        track.appendChild(item);
+      });
+    }
+  }
+
+  buildCarousel();
+
+  // Hitung total lebar
+  const totalWidth = track.scrollWidth / 2; // Lebar 1 set
+
+  // Animasi infinite dengan GSAP
+  function animateCarousel() {
+    // Set posisi awal
+    gsap.set(track, { x: 0 });
+
+    // Buat timeline
+    const tl = gsap.timeline({
+      repeat: -1,
+      ease: "none",
+      onRepeat: function () {
+        // Reset posisi tanpa jeda
+        gsap.set(track, { x: 0 });
+      }
+    });
+
+    // Animasi geser
+    tl.to(track, {
+      x: -totalWidth,
+      duration: 20,
+      ease: "none"
+    });
+
+    return tl;
+  }
+
+  const carouselAnim = animateCarousel();
+
+  // Pause on hover
+  container.addEventListener('mouseenter', () => {
+    carouselAnim.pause();
+  });
+
+  container.addEventListener('mouseleave', () => {
+    carouselAnim.resume();
+  });
+
+  console.log('🚀 GSAP Carousel berjalan!');
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dividers = document.querySelectorAll(".pixel-divider");
+  const blockCount = 12;
+  dividers.forEach(divider => {
+    for (let i = 0; i < blockCount; i++) {
+      const block = document.createElement("div");
+      const isEven = i % 2 === 0;
+      block.setAttribute('data-aos', 'fade-up');
+      block.setAttribute('data-aos-duration', '2000');
+      block.className = `flex-1 border-t-2 border-r-2 border-r-blue-700 border-blue-300 ${isEven ? "bg-blue-500" : "bg-blue-600"
+        }`;
+      divider.appendChild(block);
+    }
+  });
 });

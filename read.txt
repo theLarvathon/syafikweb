@@ -1,0 +1,75 @@
+Untuk melakukan deploy project PHP dan database secara 100% gratis, metode paling modern dan stabil saat ini adalah menggunakan kombinasi GitHub (untuk menyimpan kode) dan Railway (untuk menjalankan server PHP & database MySQL).
+Berikut adalah panduan lengkap langkah demi langkah yang bisa langsung Anda praktikkan:
+------------------------------
+## Langkah 1: Ekspor Database dari TablePlus (Lokal)
+Anda perlu mengambil salinan database yang ada di komputer Anda saat ini.
+
+   1. Buka aplikasi TablePlus dan masuk ke database lokal Anda (syafikweb_db).
+   2. Klik kanan pada nama database di panel kiri atau pilih menu File > Export...
+   3. Pilih format SQL Dump, klik Export, lalu simpan file tersebut di komputer Anda dengan nama database.sql.
+
+------------------------------
+## Langkah 2: Upload File Project ke GitHub
+Layanan hosting cloud gratis membutuhkan kode Anda tersimpan di GitHub agar bisa ditarik ke server mereka.
+
+   1. Masuk ke akun [GitHub](https://github.com/) Anda (buat akun baru jika belum punya). [1, 2] 
+   2. Klik tombol New untuk membuat Repository baru. [3] 
+   3. Beri nama (misal: syafikweb-project), pilih status Private agar kode Anda tidak dilihat orang lain, lalu klik Create repository.
+   4. Upload semua file dan folder project PHP Anda (seperti folder config, proses, file dashboard.php, dll) ke dalam repository tersebut.
+   * Catatan: Pastikan file utama Anda (seperti index.php atau login.php) berada di luar/root folder repository, bukan terbungkus di dalam folder lain lagi.
+   
+------------------------------
+## Langkah 3: Ubah Kode Koneksi Database di PHP
+Agar kode PHP Anda bisa membaca database lokal saat di komputer dan otomatis membaca database cloud saat sudah online, ubah file config/koneksi.php Anda menggunakan fungsi getenv() seperti ini:
+
+<?php
+// Mengambil data kredensial otomatis dari environment server cloud
+define("DB_HOST", getenv("MYSQLHOST") ?: "127.0.0.1");
+define("DB_USER", getenv("MYSQLUSER") ?: "root");
+define("DB_PASS", getenv("MYSQLPASSWORD") ?: "");
+define("DB_NAME", getenv("MYSQLDATABASE") ?: "syafikweb_db");
+define("DB_PORT", getenv("MYSQLPORT") ?: 3306);
+
+// Membuat koneksi ke database dengan menyertakan Port
+$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
+
+if (!$conn) {
+    die("Koneksi ke database gagal: " . mysqli_connect_error());
+}
+?>
+
+Jangan lupa untuk men-commit atau meng-upload ulang file koneksi.php yang baru ini ke GitHub Anda.
+------------------------------
+## Langkah 4: Membuat Server & Database Gratis di Railway
+
+   1. Buka situs [Railway.app](https://railway.app/) dan login menggunakan akun GitHub Anda.
+   2. Klik tombol New Project, lalu pilih opsi Provision MySQL. Railway akan langsung membuatkan satu database MySQL cloud gratis untuk Anda.
+   3. Setelah database selesai dibuat, klik tombol + New di dashboard Railway Anda, pilih GitHub Repo, lalu pilih repository syafikweb-project yang sudah dibuat di Langkah 2.
+   4. Railway akan mendeteksi kode Anda sebagai PHP dan langsung memulai proses instalasi server secara otomatis di latar belakang.
+
+------------------------------
+## Langkah 5: Hubungkan TablePlus ke Database Cloud & Impor Data
+Sekarang kita harus memindahkan isi tabel dari komputer ke database Railway yang baru saja dibuat.
+
+   1. Di dashboard Railway, klik kotak layanan MySQL Anda.
+   2. Buka tab Variables atau Connect. Di sana Anda akan melihat informasi Host, Database Name, User, Password, dan Port cloud Anda.
+   3. Buka TablePlus di komputer Anda, klik Create a new connection, lalu pilih MySQL.
+   4. Masukkan data-data kredensial dari Railway tersebut ke TablePlus Anda, lalu klik Connect.
+   5. Setelah masuk ke database cloud yang masih kosong tersebut, tekan tombol Ctrl + I (Windows) atau klik tab Import, pilih file database.sql yang Anda ekspor pada Langkah 1, lalu jalankan proses impor sampai selesai. [4] 
+
+------------------------------
+## Langkah 6: Mengaktifkan Link/Domain Website Publik
+
+   1. Di dashboard Railway, klik kotak layanan PHP (GitHub Repo) Anda.
+   2. Masuk ke tab Settings di bagian atas.
+   3. Scroll ke bawah sampai menemukan bagian Networking, lalu klik tombol Generate Domain.
+   4. Railway akan memberikan Anda sebuah tautan web gratis berakhiran .up.railway.app (contoh: syafikweb-production.up.railway.app).
+
+Tunggu proses deploy selesai hingga indikator berubah menjadi warna hijau (centang). Sekarang Anda tinggal mengklik tautan tersebut, dan website syafikweb Anda sudah bisa diakses oleh siapa saja di internet secara gratis! [5] 
+Apakah Anda menemui kendala saat mengunggah file project Anda ke GitHub, atau Anda ingin langsung mencoba mendaftar di Railway sekarang?
+
+[1] [https://learn.microsoft.com](https://learn.microsoft.com/id-id/azure/mysql/flexible-server/tutorial-php-database-app)
+[2] [https://www.gamelab.id](https://www.gamelab.id/news/351-publikasi-web-gratis-di-github)
+[3] [https://www.domainesia.com](https://www.domainesia.com/panduan/cara-deploy-web-github-di-cyberpanel/)
+[4] [https://www.rumahweb.com](https://www.rumahweb.com/journal/cara-remote-database-mysql-hosting-dengan-tableplus/)
+[5] [https://rezafikkri.github.io](https://rezafikkri.github.io/blogs/deploy-website-dengan-cicd-3-deploy-dengan-vercel)
