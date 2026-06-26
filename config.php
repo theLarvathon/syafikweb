@@ -6,12 +6,7 @@ define('DB_PASS', getenv('DB_PASS') ?: '');
 define('DB_NAME', getenv('DB_NAME') ?: 'syafik');
 define('DB_PORT', (int)(getenv('DB_PORT') ?: 3306));
 
-echo "<pre>";
-var_dump(getenv('DB_HOST'));
-var_dump(getenv('DB_USER'));
-var_dump(getenv('DB_NAME'));
-var_dump(getenv('DB_PORT'));
-exit;
+
 $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 
 if (!$conn) {
