@@ -109,7 +109,7 @@ if(session_status()===PHP_SESSION_NONE){
                 <textarea placeholder="komentar" name="komentar" rows="4"></textarea>
             </div>
             <div>
-                <a href="index.html"><span class="button"> Kembali</span></a>
+                <a href="index.php"><span class="button"> Kembali</span></a>
                 <button type="submit">Kirim Rating</button>
             </div>
         </form>
