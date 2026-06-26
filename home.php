@@ -75,12 +75,12 @@
           Student IN HIGH SCHOOL 2 BANGKALAN</h3>
         <p data-aos="fade-right" data-aos-duration="2000" class="text-md text-mist-400 Text">Transform the idea into
           digital experiences <br>through a combination <span class="font-smok"> creativity and technology</span></p>
-        <div class="flex flex-col sm:flex-row gap-4 mx-4 sm:mx-20 md:mx-16 lg:mx-40">
+        <div class="flex flex-col sm:flex-row gap-4 mx-4 sm:mx-20 md:mx-16 lg:mx-30">
           <a href="#project" class="flex-1">
             <div data-aos="fade-up" data-aos-duration="2000"
               class="group relative overflow-hidden text-center border-2 border-blue-500 rounded-lg p-3 px-6 hover:scale-95 transition-all duration-300 shadow-lg shadow-blue-400/50 hover:shadow-blue-500/70 mt-8 md:mt-32 font-quicksand cursor-pointer">
               <span
-                class="relative z-10 text-white font-semibold text-sm sm:text-base tracking-wide group-hover:text-cyan-300 transition-colors duration-300 Text text-wrap">
+                class="relative  text-white font-semibold text-sm sm:text-base tracking-wide group-hover:text-cyan-300 transition-colors duration-300 Text">
                 View Project
               </span>
               <div class="absolute inset-0opacity-0 group-hover:opacity-100 transition-opacity duration-300 "></div>
@@ -94,7 +94,7 @@
             <div data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100"
               class="group relative overflow-hidden text-center border-2 border-green-500 rounded-lg p-3 px-6 hover:scale-95 transition-all duration-300 shadow-lg shadow-green-400/50 hover:shadow-green-500/70 mt-8 md:mt-32 font-quicksand cursor-pointer">
               <span
-                class="relative z-10 text-white font-semibold text-sm sm:text-base tracking-wide group-hover:text-green-300 transition-colors duration-300 Text text-wrap">
+                class="relative text-white font-semibold text-sm sm:text-base tracking-wide group-hover:text-green-300 transition-colors duration-300 Text text-wrap">
                 Rate Me
               </span>
               <div
