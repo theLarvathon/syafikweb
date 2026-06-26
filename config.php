@@ -21,3 +21,9 @@ function QuerySelect(string $quer) {
     }
     return $rows;
 }
+echo "<pre>";
+var_dump(getenv('DB_HOST'));
+var_dump(getenv('DB_USER'));
+var_dump(getenv('DB_NAME'));
+var_dump(getenv('DB_PORT'));
+exit;
