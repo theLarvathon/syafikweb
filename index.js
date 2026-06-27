@@ -17,12 +17,16 @@ const fadeinP = document.getElementById("fadeinP");
 // const h4 = document.querySelectorAll("h4");
 // const h2 = document.querySelector("h2");
 window.onload = function () {
-  svg.classList.add("dark-mode");
-  named.classList.add("dark-mode");
-  namedSpan.classList.add("dark-mode");
+  if (svg) svg.classList.add("dark-mode"); // ✅ Aman
+  if (named) named.classList.add("dark-mode");
+  if (namedSpan) namedSpan.classList.add("dark-mode");
 };
+// Asumsikan Anda memiliki selector untuk tombol yang teksnya ingin diubah
+const toggleBtnBtn = document.querySelectorAll('.toggleMode'); // atau selector lain
+
 toggleBtns.forEach((toggleBtn) => {
   toggleBtn.addEventListener("click", function () {
+     console.log("diklik, light-mode?", body.classList.contains("light-mode"));
     // Cek mode saat ini
     if (body.classList.contains("light-mode")) {
       body.classList.remove("light-mode");
@@ -37,8 +41,12 @@ toggleBtns.forEach((toggleBtn) => {
       bgBtn.forEach((r) => r.classList.remove("light-mode"));
       svg.classList.remove("light-mode");
       svg.classList.add("dark-mode");
-      // Update teks tombol
-      toggleBtn.textContent = "light-mode";
+      
+ 
+       toggleBtns.forEach((btn) => {
+        btn.textContent = "Dark";
+      });
+  
     } else {
       body.classList.add("light-mode");
       text.forEach((r) => r.classList.add("light-mode"));
@@ -52,11 +60,14 @@ toggleBtns.forEach((toggleBtn) => {
       bgBtn.forEach((r) => r.classList.add("light-mode"));
       svg.classList.add("light-mode");
       svg.classList.remove("dark-mode");
-
-      toggleBtns.textContent = "Dark-mode";
+   
+       toggleBtns.forEach((btn) => {
+        btn.textContent = "Light";
+      });
     }
   });
 });
+
 svg.setAttribute('data-aos', 'fade-up');
 svg.setAttribute('data-aos-duration', '2000');
 // ============= HUMBERGER MENU ============== //
@@ -186,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const block = document.createElement("div");
       const isEven = i % 2 === 0;
       block.setAttribute('data-aos', 'fade-up');
-      block.setAttribute('data-aos-duration', '2000');
+      block.setAttribute('data-aos-duration', '500');
       block.className = `flex-1 border-t-2 border-r-2 border-r-blue-700 border-blue-300 ${isEven ? "bg-blue-500" : "bg-blue-600"
         }`;
       divider.appendChild(block);
